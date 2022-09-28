@@ -4,16 +4,19 @@ import matplotlib.pyplot as plt
 plt.ion()
 import logomaker as lm
 from Bio import AlignIO
-import argparse
+#import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-r", dest="reads", required=True, type=str, help="reads file")
-parser.add_argument("-o", dest="out", required=True, type=str, help="output files")
-args = parser.parse_args()
 
-with open(args.reads, "r") as f:
+#parser = argparse.ArgumentParser()
+#parser.add_argument("-r", dest="reads", required=True, type=str, help="input file")
+#parser.add_argument("-o", dest="out", required=True, type=str, help="output file")
+#args = parser.parse_args()
+
+#with open(args.reads, "r") as f:
+#    lines = f.readlines()
+
+with open("file_name.fasta", "r") as f:
     lines = f.readlines()
-
 #print(''.join(lines[:20]))
 
 seqs = [seq.strip().upper() for seq in lines if ('#' not in seq) and ('>') not in seq]
